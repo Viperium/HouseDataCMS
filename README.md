@@ -5,7 +5,7 @@ voorkant komt er een overzicht uit met de ingevoerde data.
 
 Gemaakt in Laravel.
 
-###Installatie
+##Installatie
 
 [GitHub](https://github.com/Viperium/HouseDataCMS)
 
@@ -14,13 +14,13 @@ Gemaakt in Laravel.
 * php artisan make:migrate *(Create database structure)*
 * php artisan db:seed *(Import data)*
 
-###Login
+##Login
 Gebruiker: 
 admin  
 Password: 
 password
 
-###Werking
+##Werking
 De volgende informatie moet de gebruiker kunnen invoeren, en dat wordt vervolgens aan de voorkant
 weergegeven in een tabel
 
