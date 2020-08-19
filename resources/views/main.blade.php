@@ -1,3 +1,7 @@
-@import header
-@import content
-@import footer
+@include('head')
+@include('header')
+@include('banner')
+
+@yield('content')
+
+@include('footer')

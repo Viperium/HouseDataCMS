@@ -1,38 +1,43 @@
+/* Global */
 html, body {
     background-color: #fff;
     color: #636b6f;
     font-family: 'Nunito', sans-serif;
     font-weight: 200;
-    height: 100vh;
+    height: 100%;
     margin: 0;
+    width: calc(100vw - (100vw - 100%));
 }
 
-.full-height {
-    height: 100vh;
+* {
+    box-sizing: border-box;
+}
+
+body::after {
+    display: block;
+    height: 60px;
+}
+
+.container {
+    margin: auto;
+    padding: 16px;
+    text-align: center;
+    width: calc(30vw - 5.1px);
+    background-color: #ffffff;
+    color: #636b6f;
+}
+
+.content {
+    text-align: center;
+}
+.title {
+    font-size: 56px;
 }
 
 .flex-center {
     align-items: center;
     display: flex;
     justify-content: center;
-}
-
-.position-ref {
-    position: relative;
-}
-
-.top-right {
-    position: absolute;
-    right: 10px;
-    top: 18px;
-}
-
-.content {
-    text-align: center;
-}
-
-.title {
-    font-size: 84px;
 }
 
 .links > a {
@@ -45,6 +50,414 @@ html, body {
     text-transform: uppercase;
 }
 
-.m-b-md {
-    margin-bottom: 30px;
+button:hover {
+    opacity: 0.8;
+}
+
+hr {
+    float:left;
+    background-color: #636b6f;
+    width: calc(80vw - 11.594px);
+    margin: 0 calc(10vw - 1.7px);
+}
+
+hr::after {
+    clear: both;
+}
+
+/* Header */
+header {
+    background: #ffffff;
+    float: left;
+    border-bottom: 2px solid #f1f1f1;
+    height: 50px;
+    width: 100%;
+}
+
+header::after {
+    clear: both;
+}
+
+.links.top-left {
+    position: absolute;
+    left: 16px;
+    top: 15px;
+}
+
+.links.top-right {
+    position: absolute;
+    right: 16px;
+    top: 15px;
+}
+
+#logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Section Banner */
+section#banner {
+    float:left;
+    min-height: 700px;
+    min-width: 100%;
+    background:url('../../../public/images/site/luxury-home.jpg') no-repeat 50% 35%;
+    background-size: cover;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    position: relative;
+}
+
+section#banner::after {
+    clear: both;
+}
+
+section#banner h1{
+    font-size: 55px;
+}
+
+section#banner p{
+    margin-top: 2vh;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+section#banner div.triangle-bottomleft {
+    width: 0;
+    height: 0;
+    border-bottom: calc(7vw - 1.19px) solid #ffffff;
+    border-right: calc(50vw - 8.5px) solid transparent;
+    position: absolute;
+    left:0;
+    bottom: 0;
+}
+
+section#banner div.triangle-bottomright {
+    width: 0;
+    height: 0;
+    border-bottom: calc(7vw - 1.19px) solid #ffffff;
+    border-left: calc(50vw - 8.5px) solid transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.button {
+    color: #ffffff;
+    border-radius:6px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight:bold;
+    padding: 10px 50px;
+    text-decoration:none;
+}
+.button.prime {
+    background-color: #e0ab19;
+    border: 2px solid #ffaa22;
+    border-radius:6px;
+    margin-right: calc(1vw - 0.17px);
+}
+.button.second {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius:6px;
+    margin-left: calc(1vw - 0.17px);
+}
+
+.alert {
+    color: #9d0000;
+    border: 1px solid #9D0000;
+    width: 50%;
+    margin: auto;
+}
+
+/* Section Boxes */
+section#boxes {
+    float:left;
+    width: 100%;
+    padding: 55px;
+}
+
+section#boxes::after {
+    clear:both;
+}
+
+.box {
+    float: left;
+    text-align: center;
+    width: 33%;
+}
+
+.box i {
+    color: #e0ab19;
+}
+
+/* Section Information */
+section#information {
+    float:left;
+    padding-top: 5vh;
+    width: calc(100vw - 17px);
+}
+
+.containerbox {
+    float: left;
+    height: auto;
+    text-align: left;
+    width: calc(50vw - 8.5px);
+    color: #636b6f;
+}
+.text {
+    padding-left: calc(10vw - 1.7px);
+    padding-right: calc(1vw - 0.17px);
+    font-size: 20px;
+    color: #636b6f;
+}
+.text h1 {
+    font-size: 20px;
+    color: #e0ab19;
+}
+
+.img-responsive {
+    position: relative;
+    object-fit: fill;
+    float:left;
+    height: auto;
+    width:100%;
+}
+
+.center {
+    float: left;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Section Explaination */
+section#explanation {
+    float: left;
+    width: calc(100vw - 17px);
+    background-color: #29292a;
+}
+section#explanation::after {
+    clear: both;
+}
+
+img.centergraph {
+    float: none;
+    position: absolute;
+    margin-top: -100px;
+    z-index: 100;
+    padding-left: calc(40vw - 46px);
+}
+
+/* Section Prices */
+section#prices {
+    float:left;
+    width: calc(100vw - 17px);
+}
+
+section#prices::after {
+    clear: both;
+}
+
+section#prices div.pricetext {
+    float:left;
+    width: calc(100vw - 17px);
+}
+
+section#prices div.pricetext::after {
+    clear: both;
+}
+
+section#prices div.pricetext h1 {
+    font-size: 20px;
+    color: #e0ab19;
+    padding: 0;
+}
+
+.price-item {
+    background-color: #f5f5f5;
+    width: calc(20vw - 3.4px);
+    margin-top: 25px;
+    padding-bottom: 16px;
+}
+
+.firstitem {
+    margin-left: calc(25vw - 4.25px);
+}
+
+.seconditem {
+    margin-left: calc((55vw - 7.65px) - (50vw - 8.5px));
+}
+
+.price-title{
+    width: 100%;
+    height: 225px;
+    padding: 3vh calc(2.5vw - 0.425px);
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+div.price-item.firstitem div.price-title {
+    background-color: #e0ab19;
+}
+
+div.price-item.seconditem div.price-title {
+    background-color: #636b6f;
+}
+
+.smallText {
+    font-size: 14px;
+}
+
+.price-value {
+    text-align: center;
+    margin-top: -34%;
+    margin-bottom: 20%;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.dot {
+    height: calc(12vw - 2.04px);
+    width: calc(12vw - 2.04px);;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: block;
+    margin: calc(-6vw - 1.02px) auto 0 auto;
+    border: 10px solid rgba(255, 255, 255, 0.2);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+.price-features {
+    padding: 3vh calc(2.5vw - 0.425px);;
+    text-align: center;
+}
+
+button.btn-price1 {
+    background-color: #e0ab19;
+    border: 2px solid #ffaa22;
+    border-radius:6px;
+    margin: 16px auto;
+    display:block;
+}
+
+button.btn-price2 {
+    background-color: #636b6f;
+    border: 2px solid #858585;
+    border-radius:6px;
+    margin: 16px auto;
+    display:block;
+}
+
+/* Contact */
+section#contact {
+    float:left;
+    width: calc(100vw - 17px);
+    padding: 3vh;
+}
+
+section#contact::after {
+    clear: both;
+}
+
+.header {
+    font-size: 20px;
+    color: #e0ab19;
+    padding: 0;
+}
+
+.container.contact input[type=text], input[type=password] {
+    width: calc(20vw - 3.4px);
+    padding: 12px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.container.contact input[type=submit] {
+    background-color: #e0ab19;
+    border: 2px solid #ffaa22;
+    border-radius:6px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: calc(20vw - 3.4px);
+}
+
+/* Footer */
+footer {
+    float: left;
+    background-color: #323839;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+
+footer.sticky {
+    position: fixed;
+    background-color: #323839;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+
+footer::after {
+    clear: both;
+}
+
+footer div.icons {
+    float:left;
+    padding: 13px;
+}
+footer i {
+    color: #ffffff;
+    padding-left: calc(2vw - 0.34px);
+}
+footer p {
+    float:right;
+    color: #9a9a9a;
+    font-weight: bold;
+    margin-top:20px;
+    padding-right: calc(2vw - 0.34px);
+}
+
+/* Login */
+form {
+    border: 1px solid #f1f1f1;
+}
+input[type=text], input[type=password] {
+    width: auto;
+    padding: 12px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+form input[type=submit] {
+    background-color: #e0ab19;
+    border: 2px solid #ffaa22;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: calc(10vw - 1.7px);
+    font-size: 15px;
+    font-weight: bold;
+
 }

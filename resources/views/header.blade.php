@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<header>
+    <div class="top-left links">
+        <a href="{{ route('home') }}">Home</a>
+        <a href="{{ route('home') }}">Houses</a>
+    </div>
+    <div id="logo">
+        <img src="{{ asset('images/logo/logoHD-CMS.png') }}"  alt="Logo HouseData-CMS"/>
+    </div>
+    <div class="top-right links">
+        <a href="{{ route('home') }}">Contact</a>
+        @include('links')
+    </div>
 
-    <title>HouseDataCMS</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/frontend/stylesheet.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/stylesheet.css?v1') }}" rel="stylesheet" type="text/css">
-</head>
-<body>
+</header>

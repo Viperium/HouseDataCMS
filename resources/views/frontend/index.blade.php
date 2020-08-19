@@ -1,23 +1,33 @@
-@extends('header')
+@extends('main')
 
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        Username: {{ Auth::user()->name }}
-                        <a href="{{ url('/home') }}">Home
-                        <a href="{{ route('logout') }}">Logout</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                    @endauth
-                </div>
-            @endif
+@section('title', 'Home')
+@section('banner')
+    <div class="banner">
+        <h1>House Data CMS</h1>
+        <p>"Maximaal profiteren van de huizenmarkt!"</p>
+        <button class="button prime" type="button">Contact</button>
+        <button class="button second" type="button">Meer weten</button>
+    </div>
+@endsection
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-            </div>
-        </div>
+@section('content')
+    <section id="boxes">
+        @include('frontend.boxes')
+    </section>
+    <hr/>
+    <section id="information">
+        @include('frontend.information')
+    </section>
+    <section id="explanation">
+        @include('frontend.explanation')
+    </section>
+    <section id="prices">
+        @include('frontend.prices')
+    </section>
+    <section id="contact">
+        @include('frontend.contact')
+    </section>
+@endsection
 
-@extends('footer')
+
+
