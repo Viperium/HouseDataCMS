@@ -33,6 +33,6 @@
         <img class="centergraph" alt="Rendement" src="{{asset('images/site/box-3-small.png')}}"/>
     </div>
     <div class="containerbox">
-        <img class="img-responsive" alt="display" src="{{asset('images/site/home-office.jpg')}}"/>
+        <img class="img-responsive" alt="display" src="{{asset('images/site/home-office2.jpg')}}"/>
     </div>
 </div>

@@ -30,8 +30,9 @@ body::after {
 .content {
     text-align: center;
 }
+
 .title {
-    font-size: 56px;
+    font-size: 5vw;
 }
 
 .flex-center {
@@ -123,7 +124,7 @@ section#banner h1{
 }
 
 section#banner p{
-    margin-top: 2vh;
+    margin-top: -3vh;
     font-size: 25px;
     font-weight: bold;
     font-style: italic;
@@ -159,16 +160,14 @@ section#banner div.triangle-bottomright {
     padding: 10px 50px;
     text-decoration:none;
 }
+
 .button.prime {
     background-color: #e0ab19;
     border: 2px solid #ffaa22;
-    border-radius:6px;
-    margin-right: calc(1vw - 0.17px);
 }
 .button.second {
     background-color: transparent;
     border: 2px solid #ffffff;
-    border-radius:6px;
     margin-left: calc(1vw - 0.17px);
 }
 
@@ -217,11 +216,11 @@ section#information {
 .text {
     padding-left: calc(10vw - 1.7px);
     padding-right: calc(1vw - 0.17px);
-    font-size: 20px;
+    font-size: 1.2vw;
     color: #636b6f;
 }
 .text h1 {
-    font-size: 20px;
+    font-size: 1.6vw;
     color: #e0ab19;
 }
 
@@ -452,6 +451,7 @@ input[type=text], input[type=password] {
 form input[type=submit] {
     background-color: #e0ab19;
     border: 2px solid #ffaa22;
+    border-radius:6px;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -459,5 +459,131 @@ form input[type=submit] {
     width: calc(10vw - 1.7px);
     font-size: 15px;
     font-weight: bold;
+}
 
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 500px) {
+    /* Section Banner */
+    #banner {
+        min-height: 100px;
+    }
+
+    /* Login */
+    .title {
+        font-size: 26px;
+    }
+
+    .container {
+        padding: 5px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .links > a {
+        padding: 0 10px;
+    }
+
+    .price-value {
+        margin-top: -30%;
+        font-size: initial;
+    }
+}
+
+/* Change styles for span and cancel button on small and medium size screens */
+@media screen and (min-width: 500px) and (max-width: 768px) {
+    /* Section Banner */
+    #banner {
+        min-height: 500px;
+    }
+    #banner h1{
+        font-size: 35px !important;
+    }
+
+    section#banner p{
+        font-size: 15px;
+    }
+
+    /* Section Boxes */
+    #boxes .box {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Login */
+    .title {
+        font-size: 32px;
+    }
+
+    .container {
+        padding: 5px;
+    }
+
+    input[type=text], input[type=password] {
+        width: 50%;
+    }
+    form input[type=submit] {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: calc(50vw - 5.1px);
+    }
+
+    .containerbox {
+        clear: both;
+        width: calc(100vw - 17px);
+    }
+
+    .center {
+        display: block;
+    }
+
+    .text {
+        font-size: 16px;
+        padding: 25px;
+    }
+
+    .text h1 {
+        font-size: 20px;
+    }
+
+    img.centergraph {
+        all: initial;
+    }
+
+    .price-item {
+        width: calc(50vw - 8.5px);
+    }
+
+    .firstitem {
+        margin: 16px auto;
+    }
+
+    .seconditem {
+        margin: 16px auto;
+    }
+
+    .price-value {
+        margin-top: -30%;
+    }
+
+    .dot {
+        height: calc(25vw - 4.25px);
+        width: calc(25vw - 4.25px);
+        margin: calc(-12vw - 2.04px) auto 0 auto;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    input[type=text], input[type=password] {
+        width: 40%;
+    }
+
+    form input[type=submit] {
+        width: 50%;
+    }
 }

@@ -9,31 +9,31 @@
 @section('banner')
 
     <div class="content">
-        <div class="title m-b-md">
+        <div class="title">
             Login System
         </div>
         <div class="container">
             <form method="post" action="{{ url('/checklogin') }}">
                 {{ csrf_field() }}
-                    <label for="uname"><b>Username</b>
-                        <input type="text" placeholder="Enter Username" name="name" required />
-                    </label>
+                <label for="uname"><strong>Username</strong>
+                    <input type="text" placeholder="Enter Username" name="name" required />
+                </label>
+                <br/>
+                <label for="psw"><strong>Password</strong>
+                    <input type="password" placeholder="Enter Password" name="password" required />
+                </label>
+                <br/>
+                @if ($message = Session::get('error'))
+                    <div class="alert alert-danger alert-block">
+                        <strong>{{ $message }}</strong>
+                    </div>
                     <br/>
-                    <label for="psw"><b>Password</b>
-                        <input type="password" placeholder="Enter Password" name="password" required />
-                    </label>
-                    <br/>
-                    @if ($message = Session::get('error'))
-                        <div class="alert alert-danger alert-block">
-                            <strong>{{ $message }}</strong>
-                        </div>
-                        <br/>
-                    @endif
-                    <input type="submit" name="login" class="btn btn-primary" value="Login" />
-                    <br/>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                    </label>
+                @endif
+                <input type="submit" name="login" class="btn btn-primary" value="Login" />
+                <br/>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
             </form>
         </div>
     </div>
