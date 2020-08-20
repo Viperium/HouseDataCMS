@@ -21,9 +21,5 @@ Route::post('/checklogin', 'MainController@checkLogin');
 Route::get('/successlogin', 'MainController@successLogin');
 Route::get('/logout', 'MainController@logout')->name('logout');;
 
-
-/**
- * Backend Routes
- */
-Route::get('/dashboard', 'BackendController@index');
-Route::get('/dashboard/user', 'UserController@index');
+/* House listings */
+Route::resource('listings','ListingController');

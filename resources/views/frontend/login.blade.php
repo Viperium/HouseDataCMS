@@ -29,7 +29,7 @@
                     </div>
                     <br/>
                 @endif
-                <input type="submit" name="login" class="btn btn-primary" value="Login" />
+                <input type="submit" name="login" value="Login" />
                 <br/>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me

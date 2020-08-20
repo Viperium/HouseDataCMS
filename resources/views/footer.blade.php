@@ -6,5 +6,6 @@
             <p>Viperium, Copyright &copy; 2020</p>
         </footer>
 
+        @yield('javascript')
     </body>
 </html>

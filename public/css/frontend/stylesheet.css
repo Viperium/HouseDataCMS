@@ -404,7 +404,7 @@ footer {
     float: left;
     background-color: #323839;
     bottom: 0;
-    width: 100%;
+    width: calc(100vw - 17px);
     height: 60px;
 }
 
@@ -460,6 +460,29 @@ form input[type=submit] {
     font-size: 15px;
     font-weight: bold;
 }
+
+/* Listings */
+section#listings {
+    float: left;
+    width: calc(100vw - 17px);
+}
+
+section#listings::after {
+    clear: both;
+}
+
+section#listings div.container {
+    width: calc(80vw - 1.360px);
+}
+
+section#listings h1 {
+    color: #e0ab19;
+}
+
+thead td {
+    font-weight: bold;
+}
+
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 500px) {
