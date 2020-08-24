@@ -70,7 +70,7 @@ hr::after {
 header {
     background: #ffffff;
     float: left;
-    border-bottom: 2px solid #f1f1f1;
+    border-bottom: 2px solid #e0ab19;
     height: 50px;
     width: 100%;
 }
@@ -171,11 +171,17 @@ section#banner div.triangle-bottomright {
     margin-left: calc(1vw - 0.17px);
 }
 
+.btn-warning {
+    background-color: #9d0000;
+    border: 2px solid #960000;
+}
+
 .alert {
     color: #9d0000;
-    border: 1px solid #9D0000;
+    border: 1px solid #960000;
     width: 50%;
     margin: auto;
+    padding: 0 16px;
 }
 
 /* Section Boxes */
@@ -483,6 +489,10 @@ thead td {
     font-weight: bold;
 }
 
+div.listing-image {
+    height: 15vh;
+    width: 20vw;
+}
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 500px) {

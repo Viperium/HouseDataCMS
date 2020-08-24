@@ -23,6 +23,41 @@
 
         <div class="container">
             <h1>HUIZEN AANBOD</h1>
+
+            {{--@foreach ($listings as $listing)
+                <div class="listing">
+                    <div class="image">
+                        <img class='img-responsive' src="{{ asset($listing->image) }}" alt="{{ $listing->name }}">
+                    </div>
+                    <div class="listing-content">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Naam</td>
+                                    <td>{{ $listing->name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Type</td>
+                                    <td>{{ $listing->type }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Kamers</td>
+                                    <td>{{ $listing->rooms }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>{{ $listing->status }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Prijs</td>
+                                    <td>&euro; {{ $listing->price }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            @endforeach--}}
+
             <div class="wrap">
                 <div class="table">
                     <table id="dataTable" class="display responsive nowrap">
@@ -44,7 +79,7 @@
                         <tbody>
                         @foreach ($listings as $listing)
                             <tr>
-                                <td><img class='img-responsive' src="{{ asset($listing->image) }}" alt="{{ $listing->name }}"></td>
+                                <td><div class="listing-image"><img class='img-responsive' src="{{ asset($listing->image) }}" alt="{{ $listing->name }}"></div></td>
                                 <td>{{ $listing->name }}</td>
                                 <td>{{ $listing->type }}</td>
                                 <td>{{ $listing->rooms }}</td>
@@ -53,13 +88,11 @@
                                 @if (Route::has('login'))
                                     @auth
                                         <td>
-                                            <form action="{{ route('listings.destroy',$listing->id) }}" method="POST">
+                                            <form action="{{ route('listings.destroy',$listing->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this listing?');">
                                                 <a class="button prime" href="{{ route('listings.edit', $listing->id) }}">Aanpassen</a>
-
                                                 @csrf
                                                 @method('DELETE')
-
-                                                <button type="submit" class="button prime">Delete</button>
+                                                <button type="submit" class="button btn-warning">Delete</button>
                                             </form>
                                         </td>
                                     @endauth

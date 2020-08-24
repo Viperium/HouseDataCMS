@@ -15,6 +15,7 @@
 @section('content')
     <section id="listings">
         <div class="container">
+            <h1>HUIS TOEVOEGEN</h1>
             @if (Route::has('login'))
                 @auth
                     @if ($errors->any())
