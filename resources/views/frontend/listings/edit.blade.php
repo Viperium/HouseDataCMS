@@ -33,31 +33,62 @@
                         @csrf
                         @method('PUT')
 
-                        <label for="name"><strong>Name</strong>
-                            <input type="text" value="{{ $listing->name }}" name="name" required />
-                        </label>
-                        <br/>
-                        <label for="type"><strong>Type</strong>
-                            <input type="text" value="{{ $listing->type }}" name="type" required />
-                        </label>
-                        <br/>
-                        <label for="status"><strong>Status</strong>
-                            <input type="text" value="{{ $listing->status }}" name="status" required />
-                        </label>
-                        <br/>
-                        <label for="rooms"><strong>Rooms</strong>
-                            <input type="number" value="{{ $listing->rooms }}" name="rooms" required />
-                        </label>
-                        <br/>
-                        <label for="price"><strong>Price</strong>
-                            <input type="number" step="any" value="{{ $listing->price }}" name="price" required />
-                        </label>
-                        <br/>
-                        <label for="image"><strong>Image</strong>
-                            <input id="image" type="file" name="image" alt="Thumbnail image"/>
-                        </label>
-                        <br/>
-                        <input type="submit" name="save" class="btn btn-primary" value="Aanbod Opslaan" />
+                        <div class="form-control">
+                            <div class="form-colums">
+                                <div class="form-colum-1">
+                                    <div class="form-fields">
+                                        <div class="form-field">
+                                            <label for="name"><strong>Naam</strong></label>
+                                            <input type="text" value="{{ $listing->name }}" name="name" required />
+                                        </div>
+                                        <div class="form-field">
+                                            <label for="type"><strong>Type</strong></label>
+                                            <select name="type" id="type" required>
+                                                <option value="{{ $listing->type }}" selected>{{ ucfirst($listing->type) }}</option>
+                                                <option value="" disabled>---</option>
+                                                <option value="rijtjeshuis">Rijtjeshuis</option>
+                                                <option value="apartement">Apartement</option>
+                                                <option value="vrijstaand">Vrijstaand</option>
+                                                <option value="villa">Villa</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-field">
+                                            <label for="status"><strong>Status</strong></label>
+                                            <select name="status" id="status" required>
+                                                <option value="{{ $listing->status }}" selected>{{ ucfirst($listing->status) }}</option>
+                                                <option value="" disabled>---</option>
+                                                <option value="in verkoop">In verkoop</option>
+                                                <option value="in optie/verkocht onder voorbehoud">In optie/verkocht onder voorbehoud</option>
+                                                <option value="verkocht">Verkocht</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-colum-2">
+                                    <div class="form-fields">
+                                        <div class="form-field">
+                                            <label for="rooms"><strong>Kamers</strong></label>
+                                            <input type="number" value="{{ $listing->rooms }}" name="rooms" required />
+                                        </div>
+                                        <div class="form-field">
+                                            <label for="surface"><strong>Oppervlakte</strong></label>
+                                            <input type="number" step="any" value="{{ $listing->surface }}" name="surface" required />
+                                        </div>
+                                        <div class="form-field">
+                                            <label for="image"><strong>Prijs</strong></label>
+                                            <input type="number" step="any" value="{{ $listing->price }}" name="price" required />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-image">
+                                <label for="image"><strong>Afbeelding</strong></label>
+                                <input id="image" type="file" name="image" alt="Thumbnail image" required />
+                            </div>
+                            <div class="form-submit">
+                                <input type="submit" name="save" class="btn btn-primary" value="Aanbod Updaten" />
+                            </div>
+                        </div>
                     </form>
 
                 @else

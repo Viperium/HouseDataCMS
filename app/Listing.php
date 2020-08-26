@@ -64,16 +64,4 @@ class Listing extends Model
     {
         return ucfirst($status);
     }
-
-    /**
-     * Accessor for Pprice
-     * Gets type with upper case first letter
-     *
-     * @param $price
-     * @return string
-     */
-    public function getPriceAttribute($price)
-    {
-        return number_format($price, 2, ',', '.');
-    }
 }

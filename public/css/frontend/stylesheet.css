@@ -450,7 +450,7 @@ footer p {
 form {
     border: 1px solid #f1f1f1;
 }
-input[type=text], input[type=password], input[type=number], input[type=file] {
+select, input[type=text], input[type=password], input[type=number], input[type=file] {
     width: auto;
     padding: 12px 10px;
     margin: 8px 0;
@@ -489,6 +489,10 @@ section#listings h1 {
     color: #e0ab19;
 }
 
+table#dataTable {
+    width: calc(80vw - 1.360px);
+}
+
 thead td {
     font-weight: bold;
 }
@@ -496,6 +500,73 @@ thead td {
 div.listing-image {
     height: 15vh;
     width: 20vw;
+}
+
+div.overlay {
+    position: absolute;
+    background: rgba(255, 43, 43, 0.5); /* Black see-through */
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    color: #ffffff;
+    height: 15vh;
+    width: 20vw;
+    opacity:1;
+    padding: 45px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+
+div.form-control {
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas: 'fields' 'image' 'submit';
+    padding-top: 16px;
+}
+
+div.form-colums {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-areas: '. left right .';
+    grid-gap: 50px;
+    text-align: left;
+}
+
+div.form-colum-1 {
+    grid-area: left;
+}
+
+div.form-colum-2 {
+    grid-area: right;
+}
+
+div.form-fields {
+    grid-area: field;
+}
+
+div.form-field {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-template-areas:'name input';
+}
+
+div.form-field label {
+    padding-top: 16px;
+    grid-area: name;
+}
+
+div.form-field input,select {
+    grid-area: input;
+    width: 70%;
+}
+
+div.form-image {
+    grid-area: image;
+}
+
+div.form-submit {
+    grid-area: submit;
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -513,6 +584,20 @@ div.listing-image {
     .container {
         padding: 5px;
         width: 100%;
+    }
+    div.form-colums {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 'left' 'right';
+        grid-gap: 50px;
+    }
+
+    div.form-field {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:'name' 'input';
     }
 }
 

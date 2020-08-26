@@ -67,6 +67,7 @@
                                 <td>Naam</td>
                                 <td>Type</td>
                                 <td>Kamers</td>
+                                <td>Oppervlakte</td>
                                 <td>Status</td>
                                 <td>Prijs</td>
                                 @if (Route::has('login'))
@@ -79,12 +80,19 @@
                         <tbody>
                         @foreach ($listings as $listing)
                             <tr>
-                                <td><div class="listing-image"><img class='img-responsive' src="{{ $listing->image }}" alt="{{ $listing->name }}"></div></td>
+                                <td>
+                                    <div class="listing-image"><img class='img-responsive' src="{{ $listing->image }}" alt="{{ $listing->name }}">
+                                        @if ($listing->status == 'Verkocht')
+                                            <div class="overlay">Verkocht</div>
+                                        @endif
+                                    </div>
+                                </td>
                                 <td>{{ $listing->name }}</td>
                                 <td>{{ $listing->type }}</td>
                                 <td>{{ $listing->rooms }}</td>
+                                <td>{{ $listing->surface }} m2</td>
                                 <td>{{ $listing->status }}</td>
-                                <td>&euro; {{ $listing->price }}</td>
+                                <td>&euro; {{ number_format($listing->price, 2, ',', '.') }}</td>
                                 @if (Route::has('login'))
                                     @auth
                                         <td>

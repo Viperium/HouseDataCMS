@@ -18,6 +18,7 @@ class CreateListingsTable extends Migration
             $table->string('name');
             $table->string('type');
             $table->integer('rooms');
+            $table->float('surface');
             $table->decimal('price', 12, 2);
             $table->string('status');
             $table->string('image');
