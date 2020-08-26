@@ -1,0 +1,5 @@
+/* Section Banner */
+section#banner {
+    background:url('../../../public/images/site/security-guard.jpg') no-repeat 50% 20%;
+    background-size: cover;
+}

@@ -5,7 +5,7 @@
     <div class="banner">
         <h1>House Data CMS</h1>
         <p>"Maximaal profiteren van de huizenmarkt!"</p>
-        <button class="button prime" type="button">Contact</button>
+        <a class="button prime" type="button" href="#contact">Contact</a>
         <button class="button second" type="button">Meer weten</button>
     </div>
 @endsection

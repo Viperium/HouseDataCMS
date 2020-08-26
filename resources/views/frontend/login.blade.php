@@ -2,6 +2,10 @@
 
 @section('title', 'Login')
 
+@section('css-stylesheet')
+    <link href="{{ asset('css/frontend/login.css') }}" rel="stylesheet" type="text/css">
+@endsection
+
 @if(isset(Auth::user()->email))
     <script>window.location="{{ route('home') }}";</script>
 @endif

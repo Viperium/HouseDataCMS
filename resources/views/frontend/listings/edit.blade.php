@@ -15,6 +15,7 @@
 @section('content')
     <section id="listings">
         <div class="container">
+            <h1>HUIS AANPASSEN</h1>
             @if (Route::has('login'))
                 @auth
                     @if ($errors->any())
@@ -61,6 +62,7 @@
 
                 @else
                     <h2>Not authorized to do this!</h2>
+                    <a class="button prime" href="{{ route('home') }}">Home</a>
                 @endauth
             @endif
         </div>

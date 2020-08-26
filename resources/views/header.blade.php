@@ -7,7 +7,7 @@
         <img src="{{ asset('images/logo/logoHD-CMS.png') }}"  alt="Logo HouseData-CMS"/>
     </div>
     <div class="top-right links">
-        <a href="{{ route('home') }}">Contact</a>
+        <a href="{{ route('home') }}#contact">Contact</a>
         @include('links')
     </div>
 
