@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class ListingController extends Controller
@@ -43,10 +44,23 @@ class ListingController extends Controller
             'rooms' => 'required|integer',
             'price' => 'required',
             'status' => 'required|max:191',
-            'image'  => 'required|max:191',
         ]);
 
-        Listing::create($request->all());
+        $request->validate([
+            'image' => 'required|mimes:jpeg,png,jpg|max:4096',
+        ]);
+
+        $name = $request->file('image')->getClientOriginalName();
+        $imagePath = $request->file('image')->storeAs('/images/listings', $name);
+
+        Listing::create([
+            'name' => $request->name,
+            'type' => $request->type,
+            'rooms' => $request->rooms,
+            'price' => $request->price,
+            'status' => $request->status,
+            'image' => '../storage/app/' . $imagePath
+        ]);
 
         return redirect()->route('listings.index')
             ->with('success','Listing created successfully.');
@@ -78,10 +92,34 @@ class ListingController extends Controller
             'rooms' => 'required|integer',
             'price' => 'required',
             'status' => 'required|max:191',
-            'image'  => 'required|max:191',
         ]);
 
-        $listing->update($request->all());
+        if ($request->image != null) {
+            $request->validate([
+                'image' => 'mimes:jpeg,png,jpg|max:4096',
+            ]);
+
+            $name = $request->file('image')->getClientOriginalName();
+            $exists = Storage::disk()->exists('images/listings/' . $name);
+            if (!$exists) {
+                $imagePath = $request->file('image')->storeAs('/images/listings', $name);
+            } else {
+                $imagePath = $request->file('image')->storeAs('/images/listings', rand(0,10). $name);
+            }
+
+            $listing->update([
+                'image' => '../storage/app/' . $imagePath
+            ]);
+
+        }
+
+        $listing->update([
+                'name' => $request->name,
+                'type' => $request->type,
+                'rooms' => $request->rooms,
+                'price' => $request->price,
+                'status' => $request->status,
+        ]);
 
         return redirect()->route('listings.index')
             ->with('success','Listing updated successfully');

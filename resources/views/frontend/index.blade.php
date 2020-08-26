@@ -6,7 +6,7 @@
         <h1>House Data CMS</h1>
         <p>"Maximaal profiteren van de huizenmarkt!"</p>
         <a class="button prime" type="button" href="#contact">Contact</a>
-        <button class="button second" type="button">Meer weten</button>
+        <a class="button second" type="button" href="#explanation">Meer weten</a>
     </div>
 @endsection
 

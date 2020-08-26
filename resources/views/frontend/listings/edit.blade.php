@@ -29,7 +29,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('listings.update',$listing->id) }}" method="POST">
+                    <form action="{{ route('listings.update',$listing->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -46,15 +46,15 @@
                         </label>
                         <br/>
                         <label for="rooms"><strong>Rooms</strong>
-                            <input type="text" value="{{ $listing->rooms }}" name="rooms" required />
+                            <input type="number" value="{{ $listing->rooms }}" name="rooms" required />
+                        </label>
+                        <br/>
+                        <label for="price"><strong>Price</strong>
+                            <input type="number" step="any" value="{{ $listing->price }}" name="price" required />
                         </label>
                         <br/>
                         <label for="image"><strong>Image</strong>
-                            <input type="text" value="{{ $listing->image }}" name="image" required />
-                        </label>
-                        <br/>
-                        <label for="image"><strong>Price</strong>
-                            <input type="text" value="{{ $listing->price }}" name="price" required />
+                            <input id="image" type="file" name="image" alt="Thumbnail image"/>
                         </label>
                         <br/>
                         <input type="submit" name="save" class="btn btn-primary" value="Aanbod Opslaan" />

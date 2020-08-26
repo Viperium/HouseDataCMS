@@ -29,7 +29,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('listings.store') }}" method="POST">
+                    <form action="{{ route('listings.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <label for="name"><strong>Name</strong>
@@ -45,15 +45,15 @@
                         </label>
                         <br/>
                         <label for="rooms"><strong>Rooms</strong>
-                            <input type="text" placeholder="Aantal kamers" name="rooms" required />
-                        </label>
-                        <br/>
-                        <label for="image"><strong>Image</strong>
-                            <input type="text" placeholder="Link naar image" name="image" required />
+                            <input type="number" placeholder="Aantal kamers" name="rooms" required />
                         </label>
                         <br/>
                         <label for="image"><strong>Price</strong>
-                            <input type="text" placeholder="Prijs" name="price" required />
+                            <input type="number" step="any" placeholder="Prijs" name="price" required />
+                        </label>
+                        <br/>
+                        <label for="image"><strong>Image</strong>
+                            <input id="image" type="file" name="image" alt="Thumbnail image" required />
                         </label>
                         <br/>
                         <input type="submit" name="save" class="btn btn-primary" value="Aanbod Opslaan" />

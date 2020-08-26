@@ -18,7 +18,7 @@ class ListingSeeder extends Seeder
             'rooms' => 6,
             'price' => 650000.00,
             'status' => 'in verkoop',
-            'image' => '/images/listings/house1.jpg'
+            'image' => '../storage/app/images/listings/house1.jpg'
         ]);
 
         Listing::create([
@@ -27,7 +27,7 @@ class ListingSeeder extends Seeder
             'rooms' => 4,
             'price' => 225000.00,
             'status' => 'in optie/verkocht onder voorbehoud',
-            'image' => '/images/listings/house2.jpg'
+            'image' => '../storage/app/images/listings/house2.jpg'
         ]);
 
         Listing::create([
@@ -36,7 +36,7 @@ class ListingSeeder extends Seeder
             'rooms' => 6,
             'price' => 1225000,
             'status' => 'verkocht',
-            'image' => '/images/listings/house3.jpg'
+            'image' => '../storage/app/images/listings/house3.jpg'
         ]);
     }
 }

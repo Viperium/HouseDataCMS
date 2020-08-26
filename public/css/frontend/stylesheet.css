@@ -131,7 +131,7 @@ section#banner p{
     font-size: 25px;
     font-weight: bold;
     font-style: italic;
-    text-shadow: #636b6f 0px 0px 5px;
+    text-shadow: #636b6f 0px 0px 2px;
 }
 
 section#banner div.triangle-bottomleft {
@@ -184,7 +184,7 @@ section#banner div.triangle-bottomright {
     color: #9d0000;
     border: 1px solid #960000;
     width: 50%;
-    margin: auto;
+    margin: 16px auto auto auto;
     padding: 0 16px;
 }
 
@@ -450,7 +450,7 @@ footer p {
 form {
     border: 1px solid #f1f1f1;
 }
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=number], input[type=file] {
     width: auto;
     padding: 12px 10px;
     margin: 8px 0;

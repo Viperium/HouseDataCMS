@@ -79,7 +79,7 @@
                         <tbody>
                         @foreach ($listings as $listing)
                             <tr>
-                                <td><div class="listing-image"><img class='img-responsive' src="{{ asset($listing->image) }}" alt="{{ $listing->name }}"></div></td>
+                                <td><div class="listing-image"><img class='img-responsive' src="{{ $listing->image }}" alt="{{ $listing->name }}"></div></td>
                                 <td>{{ $listing->name }}</td>
                                 <td>{{ $listing->type }}</td>
                                 <td>{{ $listing->rooms }}</td>
