@@ -88,11 +88,27 @@
                                     </div>
                                 </td>
                                 <td>{{ $listing->name }}</td>
-                                <td>{{ $listing->type }}</td>
-                                <td>{{ $listing->rooms }}</td>
-                                <td>{{ $listing->surface }} m2</td>
+                                <td>
+                                    @if ($listing->status != 'Verkocht')
+                                        {{ $listing->type }}
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($listing->status != 'Verkocht')
+                                        {{ $listing->rooms }}
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($listing->status != 'Verkocht')
+                                        {{ $listing->surface }} m2
+                                    @endif
+                                </td>
                                 <td>{{ $listing->status }}</td>
-                                <td>&euro; {{ number_format($listing->price, 2, ',', '.') }}</td>
+                                <td>
+                                    @if ($listing->status != 'Verkocht')
+                                        &euro; {{ number_format($listing->price, 2, ',', '.') }}
+                                    @endif
+                                </td>
                                 @if (Route::has('login'))
                                     @auth
                                         <td>
