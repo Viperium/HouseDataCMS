@@ -599,6 +599,13 @@ div.form-submit {
         grid-template-rows: 1fr 1fr;
         grid-template-areas:'name' 'input';
     }
+
+    .container.contact input[type=text], input[type=password] {
+        width: calc(50vw - 3.4px);
+    }
+    .container.contact input[type=submit] {
+        width: calc(40vw - 3.4px);
+    }
 }
 
 @media screen and (max-width: 768px) {

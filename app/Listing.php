@@ -25,7 +25,7 @@ class Listing extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'name', 'type', 'rooms', 'price', 'status', 'image'
+        'name', 'type', 'surface', 'rooms', 'price', 'status', 'image'
     ];
 
 
